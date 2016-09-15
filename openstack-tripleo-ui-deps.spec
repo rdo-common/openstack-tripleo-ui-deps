@@ -4,7 +4,7 @@
 
 Name:           %{sname}
 Version:        1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -22,7 +22,7 @@ Source0:        tripleo-ui-deps-%{shortcommit}.tar.gz
 BuildRequires:  nodejs
 BuildRequires:  git
 Requires:       %{sname}-babel = %{version}-%{release}
-Requires:       %{sname}-phantomjs = %{version}-%{release}
+Requires:       phantomjs >= 1.9.7
 Requires:       %{sname}-webpack = %{version}-%{release}
 
 %description
@@ -34,12 +34,6 @@ Summary:        Source dependencies for TripleO UI (babel)
 %description babel
 Source dependencies for TripleO UI (babel)
 
-%package phantomjs
-Summary:        Source dependencies for TripleO UI (phantomjs)
-
-%description phantomjs
-Source dependencies for TripleO UI (phantomjs)
-
 %package webpack
 Summary:        Source dependencies for TripleO UI (webpack)
 
@@ -48,6 +42,7 @@ Source dependencies for TripleO UI (webpack)
 
 %prep
 %autosetup -n node_modules -S git
+rm -rf phantomjs-prebuilt
 
 %build
 
@@ -58,18 +53,17 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 %files
 /opt/%{name}/
 %exclude /opt/%{name}/node_modules/babel*
-%exclude /opt/%{name}/node_modules/phantomjs*
 %exclude /opt/%{name}/node_modules/webpack*
 
 %files babel
 /opt/%{name}/node_modules/babel*
 
-%files phantomjs
-/opt/%{name}/node_modules/phantomjs*
-
 %files webpack
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Thu Sep 15 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 1-3
+- Use system phantomjs
+
 * Tue Jul 26 2016 Honza Pokorny <honza@redhat.com> 1-2
 - First RPM
