@@ -1,10 +1,10 @@
 %global sname openstack-tripleo-ui-deps
-%global commit 38664a13b4a74f9bcca3384f6ad4184a298db140
+%global commit 6741f26b0c3a2d603ee53621ab14f0aed3ed78a3
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           %{sname}
-Version:        1
-Release:        3%{?dist}
+Version:        2
+Release:        1%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -62,6 +62,10 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Fri Sep 23 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 2-1
+- Sync w/ upstream
+- Add react-motion and react-portal (MIT)
+
 * Thu Sep 15 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 1-3
 - Use system phantomjs
 
