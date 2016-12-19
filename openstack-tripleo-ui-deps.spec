@@ -1,9 +1,9 @@
 %global sname openstack-tripleo-ui-deps
-%global commit 6741f26b0c3a2d603ee53621ab14f0aed3ed78a3
+%global commit 9f2244f848f17dac4f9ccce8c96fdc7eb861b428
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           %{sname}
-Version:        2
+Version:        3
 Release:        1%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
@@ -62,6 +62,10 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Mon Dec 19 2016 Honza Pokorny <honza@redhat.com> 3-1
+- Sync w/upstream
+- Add babel-plugin-react-intl, json-loader, react-intl-po (BSD-3, MIT)
+
 * Fri Sep 23 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 2-1
 - Sync w/ upstream
 - Add react-motion and react-portal (MIT)
