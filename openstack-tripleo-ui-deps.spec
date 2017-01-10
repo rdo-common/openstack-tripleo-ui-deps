@@ -19,6 +19,9 @@ URL:            http://tripleo.org
 #   $ tar czf tripleo-ui-deps-%{shortcommit}.tar.gz node_modules
 Source0:        tripleo-ui-deps-%{shortcommit}.tar.gz
 
+# Cannot build as noarch until nodejs is built from aarch64 in CBS
+ExclusiveArch: x86_64
+
 BuildRequires:  nodejs
 BuildRequires:  git
 Requires:       %{sname}-babel = %{version}-%{release}
