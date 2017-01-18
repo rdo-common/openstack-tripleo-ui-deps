@@ -1,10 +1,10 @@
 %global sname openstack-tripleo-ui-deps
-%global commit 9f2244f848f17dac4f9ccce8c96fdc7eb861b428
+%global commit c107619eda7568b446982fc64352e1da4b9a6b02
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           %{sname}
 Version:        3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -65,6 +65,10 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Wed Jan 18 2017 Honza Pokorny <honza@redhat.com> 3-2
+- Sync w/upstream
+- Add react-cookie (MIT)
+
 * Mon Dec 19 2016 Honza Pokorny <honza@redhat.com> 3-1
 - Sync w/upstream
 - Add babel-plugin-react-intl, json-loader, react-intl-po (BSD-3, MIT)
