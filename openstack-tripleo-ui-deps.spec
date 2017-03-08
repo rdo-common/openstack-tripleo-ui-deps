@@ -1,10 +1,10 @@
 %global sname openstack-tripleo-ui-deps
-%global commit 5084e0219236d7db84ede7074e1f18d563bf14cb
+%global commit 01db9d5ab7784e4b78dc725d5acab1a628a8710f
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           %{sname}
-Version:        3
-Release:        4%{?dist}
+Version:        7
+Release:        1%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -65,6 +65,10 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Wed Mar 8 2017 Honza Pokorny <honza@redhat.com> 7-1
+- Sync w/upstream
+- jest (BSD-3) and babel-jest (BSD-3)
+
 * Wed Feb 9 2017 Honza Pokorny <honza@redhat.com> 3-4
 - Sync w/upstream
 - Add html-webpack-plugin (MIT)
