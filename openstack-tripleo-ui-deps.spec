@@ -4,7 +4,7 @@
 
 Name:           %{sname}
 Version:        7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
