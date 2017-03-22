@@ -63,7 +63,6 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
-
 * Wed Mar 22 2017 Honza Pokorny <honza@redhat.com> 7-2
 - Sync w/upstream
 - Remove karma, jasmine, phantomjs
