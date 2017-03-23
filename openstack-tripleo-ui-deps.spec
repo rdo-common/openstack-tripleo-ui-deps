@@ -1,10 +1,10 @@
 %global sname openstack-tripleo-ui-deps
-%global commit 01db9d5ab7784e4b78dc725d5acab1a628a8710f
+%global commit ad6314526b80f656b4807ed0f537f3a089c9b87c
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           %{sname}
 Version:        7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -25,7 +25,6 @@ ExclusiveArch: x86_64
 BuildRequires:  nodejs
 BuildRequires:  git
 Requires:       %{sname}-babel = %{version}-%{release}
-Requires:       phantomjs >= 1.9.7
 Requires:       %{sname}-webpack = %{version}-%{release}
 
 %description
@@ -45,7 +44,6 @@ Source dependencies for TripleO UI (webpack)
 
 %prep
 %autosetup -n node_modules -S git
-rm -rf phantomjs-prebuilt
 
 %build
 
@@ -65,15 +63,20 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Wed Mar 22 2017 Honza Pokorny <honza@redhat.com> 7-2
+- Sync w/upstream
+- Remove karma, jasmine, phantomjs
+- Add redux-form (MIT)
+
 * Wed Mar 8 2017 Honza Pokorny <honza@redhat.com> 7-1
 - Sync w/upstream
 - jest (BSD-3) and babel-jest (BSD-3)
 
-* Wed Feb 9 2017 Honza Pokorny <honza@redhat.com> 3-4
+* Thu Feb 9 2017 Honza Pokorny <honza@redhat.com> 3-4
 - Sync w/upstream
 - Add html-webpack-plugin (MIT)
 
-* Wed Jan 19 2017 Honza Pokorny <honza@redhat.com> 3-3
+* Thu Jan 19 2017 Honza Pokorny <honza@redhat.com> 3-3
 - Sync w/upstream
 - Add js-yaml (MIT)
 
