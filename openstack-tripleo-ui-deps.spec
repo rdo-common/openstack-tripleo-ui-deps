@@ -1,10 +1,10 @@
 %global sname openstack-tripleo-ui-deps
-%global commit ad6314526b80f656b4807ed0f537f3a089c9b87c
+%global commit 6f160f8c6a0299d3027134224aa3eb3ba103731b
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           %{sname}
 Version:        7
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -63,6 +63,13 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Fri Apr 7 2017 Honza Pokorny <honza@redhat.com> 7-3
+- Sync w/upstream
+- Upgrade webpack
+- Upgrade redux-forms
+- Add react-bootstrap (MIT)
+- Add favicons webpack plugin (MIT)
+
 * Wed Mar 22 2017 Honza Pokorny <honza@redhat.com> 7-2
 - Sync w/upstream
 - Remove karma, jasmine, phantomjs
