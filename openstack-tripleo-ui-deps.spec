@@ -12,15 +12,18 @@ URL:            http://tripleo.org
 # The source for this package was pulled from git.  Use the following commands
 # to generate the tarball.
 #
+# NOTE: Currently, this needs to be done on different boxes with
+#       each supported architecture.
 #   $ git clone https://github.com/openstack/tripleo-ui.git
 #   $ cd tripleo-ui
 #   $ git checkout %{commit}
 #   $ npm install
-#   $ tar czf tripleo-ui-deps-%{shortcommit}.tar.gz node_modules
-Source0:        tripleo-ui-deps-%{shortcommit}.tar.gz
+#   $ tar czf tripleo-ui-deps-%{shortcommit}-$(uname --hardware-platform).tar.gz node_modules
+Source0:        tripleo-ui-deps-%{shortcommit}-x86_64.tar.gz
+Source1:        tripleo-ui-deps-%{shortcommit}-ppc64le.tar.gz
 
 # Cannot build as noarch until nodejs is built from aarch64 in CBS
-ExclusiveArch: x86_64
+ExclusiveArch: x86_64 ppc64le
 
 BuildRequires:  nodejs
 BuildRequires:  git

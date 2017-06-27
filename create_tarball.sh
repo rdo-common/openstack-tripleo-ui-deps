@@ -2,11 +2,12 @@
 
 set -ex
 
+ARCH=$(uname --hardware-platform)
 REPONAME="tripleo-ui"
 REPO="https://github.com/openstack/$REPONAME"
 COMMIT=`awk '/%global commit/ { print $3 }' *spec`
 SHORT_COMMIT=${COMMIT:0:7}
-TARBALL="tripleo-ui-deps-$SHORT_COMMIT.tar.gz"
+TARBALL="tripleo-ui-deps-$SHORT_COMMIT-$ARCH.tar.gz"
 
 function generate_archive() {
     rm -rf $REPONAME
