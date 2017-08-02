@@ -1,10 +1,10 @@
 %global sname openstack-tripleo-ui-deps
-%global commit b53b13eac25f085ce7ff0df2234679c33b7dfdfe
+%global commit 5d47e0605bdeac866f1a783a00b4911f525357fc
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           %{sname}
 Version:        7
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -63,6 +63,12 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Tue August 2 2017 Honza Pokorny <honza@redhat.com> 7-6
+- Sync w/upstream
+- Add eslint-plugin-prettier (MIT)
+- Add axios (MIT)
+- Add es6-error (MIT)
+
 * Tue May 30 2017 Honza Pokorny <honza@redhat.com> 7-5
 - Sync w/upstream
 - Add react-router-dom (MIT)
