@@ -63,7 +63,7 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
-* Tue August 2 2017 Honza Pokorny <honza@redhat.com> 7-6
+* Wed Aug 02 2017 Honza Pokorny <honza@redhat.com> 7-6
 - Sync w/upstream
 - Add eslint-plugin-prettier (MIT)
 - Add axios (MIT)
