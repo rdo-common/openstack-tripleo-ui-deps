@@ -1,3 +1,5 @@
+# This package won't generate useful debuginfo
+%global debug_package %{nil}
 %global sname openstack-tripleo-ui-deps
 %global commit 56fbb1bc78ed662ac209683c846c9fe58a62acae
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
@@ -9,14 +11,8 @@ Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
 
-# The source for this package was pulled from git.  Use the following commands
-# to generate the tarball.
-#
-#   $ git clone https://github.com/openstack/tripleo-ui.git
-#   $ cd tripleo-ui
-#   $ git checkout %{commit}
-#   $ npm install
-#   $ tar czf tripleo-ui-deps-%{shortcommit}.tar.gz node_modules
+# See companion script create_tarball.sh to generate
+# source tarball
 Source0:        tripleo-ui-deps-%{shortcommit}.tar.gz
 
 # Cannot build as noarch until nodejs is built from aarch64 in CBS
