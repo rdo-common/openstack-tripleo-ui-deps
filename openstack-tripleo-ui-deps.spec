@@ -1,12 +1,12 @@
 # This package won't generate useful debuginfo
 %global debug_package %{nil}
 %global sname openstack-tripleo-ui-deps
-%global commit 56fbb1bc78ed662ac209683c846c9fe58a62acae
+%global commit f2820bd0cc6560cf9467cca92ff2f7d749a43fe1
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           %{sname}
 Version:        8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -59,6 +59,12 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Mon Dec 4 2017 Honza Pokorny <honza@redhat.com> 8-2
+- Sync w/upstream
+- Upgrade react-bootstrap (stays MIT)
+- Add react-overlays (MIT)
+- Add react-transition-group (BSD 3-Clause)
+
 * Thu Oct 12 2017 Honza Pokorny <honza@redhat.com> 8-1
 - Sync w/upstream
 - Add uuid (MIT)
