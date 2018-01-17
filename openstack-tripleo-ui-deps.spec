@@ -6,7 +6,7 @@
 
 Name:           %{sname}
 Version:        8
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -59,6 +59,9 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Mon Jan 08 2018 Javier Peña <jpena@redhat.com> 8-3
+- Re-created tarball using npm 3.x
+
 * Mon Dec 4 2017 Honza Pokorny <honza@redhat.com> 8-2
 - Sync w/upstream
 - Upgrade react-bootstrap (stays MIT)
