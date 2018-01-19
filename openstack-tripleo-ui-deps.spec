@@ -1,12 +1,12 @@
 # This package won't generate useful debuginfo
 %global debug_package %{nil}
 %global sname openstack-tripleo-ui-deps
-%global commit f2820bd0cc6560cf9467cca92ff2f7d749a43fe1
+%global commit 744fdebcd77c545a48909973869d9a23069116bd
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           %{sname}
 Version:        8
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -59,6 +59,47 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Fri Jan 19 2018 Honza Pokorny <honza@redhat.com> 8-5
+- Sync w/upstream
+- Upgrade axios [MIT]
+- Upgrade babel-core [MIT]
+- Upgrade babel-polyfill [MIT]
+- Upgrade babel-preset-env [MIT]
+- Upgrade babel-preset-react [MIT]
+- Upgrade babel-preset-stage-0 [MIT]
+- Upgrade immutable [MIT]
+- Upgrade patternfly [Apache-2.0]
+- Upgrade react-immutable-proptypes [MIT]
+- Upgrade react-intl [MIT]
+- Upgrade react-motion [MIT]
+- Upgrade react-overlays [MIT]
+- Upgrade react-portal [MIT]
+- Upgrade react-redux [MIT]
+- Upgrade react-router [MIT]
+- Upgrade react-router-dom [MIT]
+- Upgrade redux [MIT]
+- Upgrade redux-logger [MIT]
+- Upgrade redux-thunk [MIT]
+- Upgrade reselect [MIT]
+- Upgrade babel-eslint [MIT]
+- Upgrade babel-jest [MIT]
+- Upgrade css-loader [MIT]
+- Upgrade es6-promise [MIT]
+- Upgrade eslint [MIT]
+- Upgrade eslint-config-prettier [MIT]
+- Upgrade eslint-plugin-prettier [MIT]
+- Upgrade eslint-plugin-react [MIT]
+- Upgrade file-loader [MIT]
+- Upgrade jest [MIT]
+- Upgrade less-loader [MIT]
+- Upgrade react-intl-po [MIT]
+- Upgrade semver [MIT]
+- Upgrade style-loader [MIT]
+- Upgrade url-loader [MIT]
+- Upgrade webpack [MIT]
+- Upgrade webpack-dev-server [MIT]
+- Remove react-addons-test-utils
+
 * Wed Jan 17 2018 Alan Pevec <apevec AT redhat.com> 8-4
 - Rebuild with npm 5.x to sync with upstream
 
