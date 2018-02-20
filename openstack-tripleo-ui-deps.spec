@@ -1,12 +1,12 @@
 # This package won't generate useful debuginfo
 %global debug_package %{nil}
 %global sname openstack-tripleo-ui-deps
-%global commit 744fdebcd77c545a48909973869d9a23069116bd
+%global commit e1adf4c78e59fe3911c7429f6a321ea4c98640f9
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           %{sname}
 Version:        8
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -59,6 +59,20 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Tue Feb 20 2018 Honza Pokorny <honza@redhat.com> 8-6
+- Sync w/upstream
+- Upgrade formsy-react [MIT]
+- Upgrade normalizr [MIT]
+- Upgrade patternfly-react [MIT]
+- Upgrade prop-types [MIT]
+- Upgrade react [MIT]
+- Upgrade react-dom [MIT]
+- Upgrade redux-form [MIT]
+- Upgrade react-test-renderer [MIT]
+- Upgrade react-bootstrap [MIT]
+- Upgrade redux-form-validators [MIT]
+- Upgrade babel-preset-es2015
+
 * Fri Jan 19 2018 Honza Pokorny <honza@redhat.com> 8-5
 - Sync w/upstream
 - Upgrade axios [MIT]
