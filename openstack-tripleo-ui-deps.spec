@@ -1,8 +1,8 @@
 # This package won't generate useful debuginfo
 %global debug_package %{nil}
 %global sname openstack-tripleo-ui-deps
-%global commit e1adf4c78e59fe3911c7429f6a321ea4c98640f9
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
+%global review 535323
+%global patchset 4
 
 Name:           %{sname}
 Version:        8
@@ -13,7 +13,7 @@ URL:            http://tripleo.org
 
 # See companion script create_tarball.sh to generate
 # source tarball
-Source0:        tripleo-ui-deps-%{shortcommit}.tar.gz
+Source0:        tripleo-ui-deps-%{review}.%{patchset}.tar.gz
 
 # Cannot build as noarch until nodejs is built from aarch64 in CBS
 ExclusiveArch: x86_64
