@@ -6,7 +6,7 @@
 
 Name:           %{sname}
 Version:        8
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -15,8 +15,7 @@ URL:            http://tripleo.org
 # source tarball
 Source0:        tripleo-ui-deps-%{shortcommit}.tar.gz
 
-# Cannot build as noarch until nodejs is built from aarch64 in CBS
-ExclusiveArch: x86_64
+BuildArch:      noarch
 
 BuildRequires:  nodejs
 BuildRequires:  git
