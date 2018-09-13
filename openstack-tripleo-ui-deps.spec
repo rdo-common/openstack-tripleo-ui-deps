@@ -1,12 +1,12 @@
 # This package won't generate useful debuginfo
 %global debug_package %{nil}
 %global sname openstack-tripleo-ui-deps
-%global review 582484
+%global review 601626
 %global patchset 3
 
 Name:           %{sname}
-Version:        9
-Release:        3%{?dist}
+Version:        10
+Release:        1%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -58,6 +58,13 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Thu Sep 13 2018 Honza Pokorny <honza@redhat.com> 10-1
+- Sync w/upstream
+- Upgrade webpack [MIT]
+- Upgrade webpack-cli [MIT]
+- Upgrade webpack-dev-server [MIT]
+- Upgrade lodash [MIT]
+
 * Mon Jul 23 2018 Honza Pokorny <honza@redhat.com> 9-3
 - Sync w/upstream
 - Upgrade patternfly [Apache-2.0]
