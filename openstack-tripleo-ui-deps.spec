@@ -4,6 +4,8 @@
 %global review 601626
 %global patchset 3
 
+%global __brp_mangle_shebangs_exclude coffee
+
 Name:           %{sname}
 Version:        10
 Release:        1%{?dist}
