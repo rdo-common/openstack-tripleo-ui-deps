@@ -1,14 +1,14 @@
 # This package won't generate useful debuginfo
 %global debug_package %{nil}
 %global sname openstack-tripleo-ui-deps
-%global review 601626
+%global review 621559
 %global patchset 3
 
 %global __brp_mangle_shebangs_exclude coffee
 
 Name:           %{sname}
 Version:        10
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -60,6 +60,11 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Fri Dec 07 2018 Honza Pokorny <honza@redhat.com> 10-2
+- Sync w/upstream
+- Upgrade redux-form [MIT]
+- Add react-ace [MIT]
+
 * Thu Sep 13 2018 Honza Pokorny <honza@redhat.com> 10-1
 - Sync w/upstream
 - Upgrade webpack [MIT]
