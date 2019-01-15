@@ -8,7 +8,7 @@
 
 Name:           %{sname}
 Version:        10
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -21,6 +21,9 @@ BuildArch:      noarch
 
 BuildRequires:  nodejs
 BuildRequires:  git
+%if 0%{?fedora} || 0%{?rhel} > 7
+BuildRequires:  /usr/bin/pathfix.py
+%endif
 Requires:       %{sname}-babel = %{version}-%{release}
 Requires:       %{sname}-webpack = %{version}-%{release}
 
@@ -42,6 +45,11 @@ Source dependencies for TripleO UI (webpack)
 %prep
 %autosetup -n node_modules -S git
 
+%if 0%{?fedora} || 0%{?rhel} > 7
+# Fix ambiguous shebangs in the node-forge tests
+pathfix.py -pni "%{__python3} %{py3_shbang_opts}" node_modules/node-forge/tests/
+%endif
+
 %build
 
 %install
@@ -60,6 +68,9 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Tue Jan 15 2019 Javier Peña <jpena@redhat.com> 10-3
+- Fix Python shebangs for Fedora 30+ and RHEL 8 builds
+
 * Fri Dec 07 2018 Honza Pokorny <honza@redhat.com> 10-2
 - Sync w/upstream
 - Upgrade redux-form [MIT]
