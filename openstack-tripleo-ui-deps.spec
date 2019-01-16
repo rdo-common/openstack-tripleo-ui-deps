@@ -8,7 +8,7 @@
 
 Name:           %{sname}
 Version:        10
-Release:        3%{?dist}
+Release:        3.1%{?dist}
 Summary:        Source dependencies for TripleO UI
 License:        ASL 2.0
 URL:            http://tripleo.org
@@ -47,7 +47,7 @@ Source dependencies for TripleO UI (webpack)
 
 %if 0%{?fedora} || 0%{?rhel} > 7
 # Fix ambiguous shebangs in the node-forge tests
-pathfix.py -pni "%{__python3} %{py3_shbang_opts}" node_modules/node-forge/tests/
+pathfix.py -pni "%{__python3} %{py3_shbang_opts}" %{_builddir}/node_modules/node-forge/tests/
 %endif
 
 %build
@@ -68,6 +68,9 @@ cp -rf %{_builddir}/node_modules %{buildroot}/opt/%{name}/
 /opt/%{name}/node_modules/webpack*
 
 %changelog
+* Tue Jan 15 2019 Javier Peña <jpena@redhat.com> 10-3.1
+- Fix bug in pathfix.py line
+
 * Tue Jan 15 2019 Javier Peña <jpena@redhat.com> 10-3
 - Fix Python shebangs for Fedora 30+ and RHEL 8 builds
 
